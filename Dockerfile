@@ -1,4 +1,5 @@
 FROM arm32v6/alpine:latest
+RUN [ "cross-build-start" ]
 
 RUN mkdir -p /aws
 RUN apk add --no-cache --virtual .build-deps \
@@ -11,3 +12,6 @@ RUN apk del .build-deps
 
 WORKDIR /aws
 ENTRYPOINT ["aws"]
+
+
+RUN [ "cross-build-end" ]
