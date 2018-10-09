@@ -1,7 +1,7 @@
-AWS cli in minimal footprint
-============================
+AWS cli in minimal footprint (ARM version - suitable for Raspberry Pi)
+======================================================================
 
-Automatic built minimal docker image for AWS cli based on Alpine Linux (`library/alpine:latest`), around 77MB.
+Automatic built minimal docker image for AWS cli based on Alpine Linux (`arm32v6/alpine:latest`), around 5MB.
 
 ## Usage
 ```
