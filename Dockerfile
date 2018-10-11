@@ -1,17 +1,13 @@
 FROM arm32v6/alpine:latest
-RUN [ "cross-build-start" ]
 
 RUN mkdir -p /aws && \
- apk add --no-cache --virtual .build-deps \
+	apk update && \
+	apk add --no-cache \
     groff \
     less \
     python \
-    py-pip && \
-    pip install --no-cache-dir awscli && \
-	apk del .build-deps
-
+    py-pip
+RUN pip install --no-cache-dir awscli
+#RUN apk del .build-deps
 WORKDIR /aws
 ENTRYPOINT ["aws"]
-
-
-RUN [ "cross-build-end" ]
